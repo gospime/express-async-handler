@@ -8,7 +8,7 @@ const Boom = require('@hapi/boom');
 // https://nemethgergely.com/error-handling-express-async-await
 const getErrorHandling = next => error => {
   if (error instanceof Error && !error.isBoom) {
-    error = Boom.badImplementation(error.message, error);
+    error = Boom.badImplementation(error);
   }
 
   next(error);
